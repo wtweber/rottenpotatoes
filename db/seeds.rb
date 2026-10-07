@@ -27,9 +27,8 @@ more_movies = [
     :release_date => '11-Dec-2005'}
 ]
 
+Movie.destroy_all
+
 more_movies.each do |movie|
-  mov = Movie.find_by(title: movie.title)
-  if mov.nil?
-    Movie.create!(movie)
-  end
+  Movie.create!(movie)
 end
