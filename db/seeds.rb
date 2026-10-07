@@ -29,7 +29,7 @@ more_movies = [
 
 more_movies.each do |movie|
   mov = Movie.find_by(title: movie.title)
-  if mov.nil? do
+  if mov.nil?
     Movie.create!(movie)
   end
 end
