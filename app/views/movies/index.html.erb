@@ -15,7 +15,11 @@
     </thread>
     <tbody>
       <% @movies.each do |movie| %>
-      <%= render movie %>
+        <tr>
+          <th scope="row"><%= link_to movie.title, movie %></th>
+          <td><%= movie.rating %></td>
+          <td><%= movie.release_date %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
