@@ -5,12 +5,12 @@
 <h1>Movies</h1>
 
 <div id="movies">
-  <table>
+  <table id="myTable">
     <thread>
       <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Rating</th>
-        <th scope="col">Release Date</th>
+        <th><%= link_to 'Title', :sort => 'title' %></th>
+        <th><%= link_to 'Rating', :sort => 'rating' %></th>
+        <th><%= link_to 'Release', :sort => 'release_date' %></th>
       </tr>
     </thread>
     <tbody>
@@ -18,7 +18,7 @@
         <tr>
           <th scope="row"><%= link_to movie.title, movie %></th>
           <td><%= movie.rating %></td>
-          <td><%= movie.release_date %></td>
+          <td><%= movie.release_date.strftime('%B %d, %Y') %></td>
         </tr>
       <% end %>
     </tbody>
