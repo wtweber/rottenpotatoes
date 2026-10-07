@@ -46,7 +46,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # Use sqlite3 as the database for Active Record
-  gem "sqlite3"
+  gem 'sqlite3'
 end
 
 group :development do
@@ -55,5 +55,5 @@ group :development do
 end
 
 group :production do
-  gem "pg" # for Heroku deployment
+  gem 'pg' # for Heroku deployment
 end
