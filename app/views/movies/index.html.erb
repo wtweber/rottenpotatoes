@@ -1,3 +1,41 @@
+<head>
+  <style>
+    a:link, a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+    /* Container styling to allow horizontal scrolling on mobile */
+    .table-container {
+        overflow-x: auto;
+        margin: 20px 0;
+    }
+
+    /* Core Table Styling */
+    .styled-table {
+        width: 90%;
+        border-collapse: collapse; /* Merges borders into a single clean line */
+        margin: 0;
+        font-size: 16px;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden; /* Cleans up corners when border-radius is applied */
+    }
+    .styled-table table, th, td {
+      border: 1px solid;
+      border-collapse: collapse;
+      padding: 10px;
+      text-align: left;
+    }
+    .styled-table tr:hover {background-color: lightskyblue;}
+    .styled-table th {
+      background-color: navy;
+      color: white;
+    }
+  </style>
+</head>
+
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Movies" %>
@@ -5,7 +43,7 @@
 <h1>Movies</h1>
 
 <div id="movies">
-  <table id="myTable">
+  <table class='styled-table'>
     <thread>
       <tr>
         <th><%= link_to 'Title', :sort => 'title' %></th>
@@ -16,7 +54,7 @@
     <tbody>
       <% @movies.each do |movie| %>
         <tr>
-          <th scope="row"><%= link_to movie.title, movie %></th>
+          <td scope="row"><%= link_to movie.title, movie %></td>
           <td><%= movie.rating %></td>
           <td><%= movie.release_date.strftime('%B %d, %Y') %></td>
         </tr>
