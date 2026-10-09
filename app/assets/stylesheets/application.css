@@ -8,10 +8,7 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
-a:link, a:visited {
-    color: inherit;
-    text-decoration: none;
-}
+
 .styled-table {
     width: 100%;
     border-collapse: collapse;
@@ -29,16 +26,33 @@ a:link, a:visited {
 .styled-table th {
     background-color: navy;
     color: white;
+    border-color: black;
 }
 .styled-button {
     background-color: navy;
-    padding: 10px 20px;        /* Spacing inside */
-    border: none;              /* Remove default border */
-    border-radius: 5px;        /* Rounded corners */
-    font-size: 16px;           /* Text size */
-    cursor: pointer;           /* Hand cursor on hover */
+    color: whitesmoke !important;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.destroy-button {
+    background-color: red;
+    color: white !important;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: sans-serif;
+    cursor: pointer;
 }
 .padded {
-    display: inline-block; 
-    margin-top: 40px; 
+    margin-top: 20px; 
+}
+
+a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
 }
