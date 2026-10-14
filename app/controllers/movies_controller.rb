@@ -1,9 +1,10 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
+  helper_method :sort_column, :sort_direction
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.order(params[:sort])
+    @movies = Movie.order(Arel.sql("#{sort_column} #{sort_direction}"))
   end
 
   # GET /movies/1 or /movies/1.json
@@ -55,6 +56,14 @@ class MoviesController < ApplicationController
       format.html { redirect_to movies_path, notice: "Movie was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
+  end
+
+  def sort_column
+        Movie.column_names.include?(params[:sort]) ? params[:sort] : 'title'
+    end
+
+  def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
   end
 
   private
