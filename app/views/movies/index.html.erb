@@ -14,8 +14,8 @@
     <thread>
       <tr>
         <th><%= sortable "title", "Title" %></th>
-        <th><%= link_to "Rating", :sort => "rating" %></th>
-        <th><%= link_to "Release", :sort => "release_date" %></th>
+        <th><%= sortable "rating", "Rating" %></th>
+        <th><%= sortable "release_date", "Release" %></th>
       </tr>
     </thread>
     <tbody>
