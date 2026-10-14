@@ -64,5 +64,8 @@ a:link, a:visited {
     font-family: sans-serif;
 }
 .sort-acending {
-    background-color: lightgrey;
+    background-color: lightcyan;
+}
+.sort-decending {
+    background-color: lightblue;
 }

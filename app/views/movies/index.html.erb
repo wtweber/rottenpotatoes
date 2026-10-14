@@ -7,9 +7,9 @@
 <div id="movies">
   <table class="styled-table">
     <colgroup>
-      <col class="<%= 'sort-acending' if params[:sort] == 'title' %>" />
-      <col class="<%= 'sort-acending' if params[:sort] == 'rating' %>" />
-      <col class="<%= 'sort-acending' if params[:sort] == 'release_date' %>" />
+      <col class="<%= (params[:direction] == 'desc' ? 'sort-decending' : 'sort-acending') if params[:sort] == 'title' %>" />
+      <col class="<%= (params[:direction] == 'desc' ? 'sort-decending' : 'sort-acending') if params[:sort] == 'rating' %>" />
+      <col class="<%= (params[:direction] == 'desc' ? 'sort-decending' : 'sort-acending') if params[:sort] == 'release_date' %>" />
     </colgroup>
     <thread>
       <tr>
