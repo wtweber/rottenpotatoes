@@ -58,14 +58,6 @@ class MoviesController < ApplicationController
     end
   end
 
-  def sort_column
-        Movie.column_names.include?(params[:sort]) ? params[:sort] : 'title'
-    end
-
-  def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
@@ -75,5 +67,15 @@ class MoviesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def movie_params
       params.expect(movie: [ :title, :rating, :description, :release_date ])
+    end
+
+    #Clean sort column
+    def sort_column
+      Movie.column_names.include?(params[:sort]) ? params[:sort] : 'title'
+    end
+    
+    #Clean sort direction
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
     end
 end
