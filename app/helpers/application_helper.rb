@@ -5,11 +5,8 @@ module ApplicationHelper
         direction = column == sort_column && sort_direction == 'asc' ? 'desc' : 'asc'
         
         #Sort direction icon
-        icon = if column == sort_column
-            sort_direction == 'asc' ? '▲' : '▼'
-        else
-            ''
-        end
+        icon = (sort_direction == 'asc' ? '▲' : '▼') if column == sort_column
+        
         link_to "#{title} #{icon}", :sort => column, :direction => direction
     end
 
