@@ -6,15 +6,12 @@ module ApplicationHelper
         
         #Sort direction icon
         icon = (sort_direction == 'asc' ? '▲' : '▼') if column == sort_column
-        
+
         link_to "#{title} #{icon}", :sort => column, :direction => direction
     end
 
+    #Column formatting css classes
     def columnFormat(column)
-        if column == sort_column
-            sort_direction == 'asc' ? 'sort-acending' : 'sort-decending'
-        else 
-            ''
-        end
+        (sort_direction == 'asc' ? 'sort-acending' : 'sort-decending') if column == sort_column
     end
 end
