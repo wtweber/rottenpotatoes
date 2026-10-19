@@ -9,4 +9,12 @@ module ApplicationHelper
         end
         link_to "#{title} #{icon}", :sort => column, :direction => direction
     end
+
+    def columnFormat(column)
+        if column == sort_column
+            sort_direction == 'asc' ? 'sort-acending' : 'sort-decending'
+        else 
+            ''
+        end
+    end
 end
